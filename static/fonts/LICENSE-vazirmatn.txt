@@ -1,0 +1,7 @@
+Vazirmatn Font Family
+Copyright 2020 The Vazirmatn Project Authors (https://github.com/rastikerdar/vazirmatn)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+See: https://scripts.sil.org/OFL
+
+Full license text: https://github.com/rastikerdar/vazirmatn/blob/master/OFL.txt

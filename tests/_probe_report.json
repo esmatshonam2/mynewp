@@ -1,0 +1,485 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/login",
+    "status": 200,
+    "ok": true,
+    "note": "{\"ok\":true}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds",
+    "status": 200,
+    "ok": true,
+    "note": "{\"ok\":true,\"inbound\":{\"uid\":\"4670ac362c3e9f9e\",\"uuid\":\"83d3d8c5-5656-4"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds",
+    "status": 200,
+    "ok": true,
+    "note": "{\"ok\":true,\"inbound\":{\"uid\":\"882a879cf9673c80\",\"uuid\":\"fc5ed821-b5fb-4"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds",
+    "status": 200,
+    "ok": true,
+    "note": "{\"ok\":true,\"inbound\":{\"uid\":\"2b1b24ed360fe2b5\",\"uuid\":\"1d3ad438-95ec-4"
+  },
+  {
+    "method": "GET",
+    "path": "/api/me",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/stats",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/system",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/telemetry",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/live",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/online",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/inbounds",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/plans",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/servers",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/servers/best",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/servers/monitoring",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/servers/top",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/server-groups",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/server-events",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/alerts",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/notifications",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/analytics?range=today",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/ai/brief",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/audit",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/tokens",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/backups",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/roles",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/admins",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/security/overview",
+    "status": 200,
+    "ok": true,
+    "note": ""
+  },
+  {
+    "method": "GET",
+    "path": "/api/diagnostics/run",
+    "status": 0,
+    "ok": false,
+    "note": "RemoteProtocolError('Server disconnected without sending a response.')"
+  },
+  {
+    "method": "GET",
+    "path": "/api/telegram/status",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/shop/overview",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/shop/users",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/shop/topups",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/plugins",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/plugins/widgets",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/xray/status",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/xray/config",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/xray/validate",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ota/check",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/inbounds/4670ac362c3e9f9e/links",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/inbounds/4670ac362c3e9f9e/qr",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/inbounds/4670ac362c3e9f9e/config-file",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/inbounds/4670ac362c3e9f9e/sub",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/servers/1/health",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/servers/1/metrics",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/servers/1/events",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/servers/1/alerts",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/servers/1/users",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/api/assignments",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/ai/chat",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds/{uid}/toggle",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds/{uid}/toggle",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds/{uid}/clone",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds/{uid}/extend",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds/{uid}/reset-usage",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds/{uid}/regenerate",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds/{uid}/regen-sub",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds/{uid}/sub-toggle",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/inbounds/{uid}/adjust-traffic",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/inbounds/{uid}",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/sub/{uid}",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/plans",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/settings",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "POST",
+    "path": "/api/servers",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/login",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/dashboard",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/setup",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "status": 0,
+    "ok": false,
+    "note": "ConnectError('[WinError 10061] No connection could be made because the target machine acti"
+  }
+]

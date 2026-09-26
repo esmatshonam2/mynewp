@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: sspanel
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: STANNG_DATA_DIR
+        value: /app/data
+      - key: PANEL_NAME
+        value: SsPanel
+    autoDeploy: true

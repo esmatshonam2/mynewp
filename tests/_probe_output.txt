@@ -1,0 +1,114 @@
+[OK ] POST   /api/login                                           -> 200 {"ok":true}
+[OK ] POST   /api/inbounds                                        -> 200 {"ok":true,"inbound":{"uid":"4670ac362c3e9f9e","uuid":"83d3d8c5-5656-4
+[OK ] POST   /api/inbounds                                        -> 200 {"ok":true,"inbound":{"uid":"882a879cf9673c80","uuid":"fc5ed821-b5fb-4
+[OK ] POST   /api/inbounds                                        -> 200 {"ok":true,"inbound":{"uid":"2b1b24ed360fe2b5","uuid":"1d3ad438-95ec-4
+[OK ] GET    /api/me                                              -> 200 
+[OK ] GET    /stats                                               -> 200 
+[OK ] GET    /api/system                                          -> 200 
+[OK ] GET    /api/system/telemetry                                -> 200 
+[OK ] GET    /api/live                                            -> 200 
+[OK ] GET    /api/online                                          -> 200 
+[OK ] GET    /api/inbounds                                        -> 200 
+[OK ] GET    /api/plans                                           -> 200 
+[OK ] GET    /api/servers                                         -> 200 
+[OK ] GET    /api/servers/best                                    -> 200 
+[OK ] GET    /api/servers/monitoring                              -> 200 
+[OK ] GET    /api/servers/top                                     -> 200 
+[OK ] GET    /api/server-groups                                   -> 200 
+[OK ] GET    /api/server-events                                   -> 200 
+[OK ] GET    /api/alerts                                          -> 200 
+[OK ] GET    /api/notifications                                   -> 200 
+[OK ] GET    /api/analytics?range=today                           -> 200 
+[OK ] GET    /api/ai/brief                                        -> 200 
+[OK ] GET    /api/audit                                           -> 200 
+[OK ] GET    /api/tokens                                          -> 200 
+[OK ] GET    /api/backups                                         -> 200 
+[OK ] GET    /api/roles                                           -> 200 
+[OK ] GET    /api/admins                                          -> 200 
+[OK ] GET    /api/security/overview                               -> 200 
+[FAIL] GET    /api/diagnostics/run                                 -> 0 RemoteProtocolError('Server disconnected without sending a response.')
+[FAIL] GET    /api/telegram/status                                 -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/shop/overview                                   -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/shop/users                                      -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/shop/topups                                     -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/plugins                                         -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/plugins/widgets                                 -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/xray/status                                     -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/xray/config                                     -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/xray/validate                                   -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/ota/check                                       -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/inbounds/4670ac362c3e9f9e/links                 -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/inbounds/4670ac362c3e9f9e/qr                    -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/inbounds/4670ac362c3e9f9e/config-file           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/inbounds/4670ac362c3e9f9e/sub                   -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/servers/1/health                                -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/servers/1/metrics                               -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/servers/1/events                                -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/servers/1/alerts                                -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/servers/1/users                                 -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /api/assignments                                     -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/ai/chat                                         -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/inbounds/{uid}/toggle                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/inbounds/{uid}/toggle                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/inbounds/{uid}/clone                            -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/inbounds/{uid}/extend                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/inbounds/{uid}/reset-usage                      -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/inbounds/{uid}/regenerate                       -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/inbounds/{uid}/regen-sub                        -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/inbounds/{uid}/sub-toggle                       -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/inbounds/{uid}/adjust-traffic                   -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] PATCH  /api/inbounds/{uid}                                  -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /sub/{uid}                                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/plans                                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/settings                                        -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] POST   /api/servers                                         -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /                                                    -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /login                                               -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /dashboard                                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /setup                                               -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+[FAIL] GET    /health                                              -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+
+======================================================================
+TOTAL 69   PASS 28   FAIL 41
+======================================================================
+  GET    /api/diagnostics/run                                 -> 0 RemoteProtocolError('Server disconnected without sending a response.')
+  GET    /api/telegram/status                                 -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/shop/overview                                   -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/shop/users                                      -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/shop/topups                                     -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/plugins                                         -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/plugins/widgets                                 -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/xray/status                                     -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/xray/config                                     -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/xray/validate                                   -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/ota/check                                       -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/inbounds/4670ac362c3e9f9e/links                 -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/inbounds/4670ac362c3e9f9e/qr                    -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/inbounds/4670ac362c3e9f9e/config-file           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/inbounds/4670ac362c3e9f9e/sub                   -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/servers/1/health                                -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/servers/1/metrics                               -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/servers/1/events                                -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/servers/1/alerts                                -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/servers/1/users                                 -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /api/assignments                                     -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/ai/chat                                         -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/inbounds/{uid}/toggle                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/inbounds/{uid}/toggle                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/inbounds/{uid}/clone                            -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/inbounds/{uid}/extend                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/inbounds/{uid}/reset-usage                      -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/inbounds/{uid}/regenerate                       -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/inbounds/{uid}/regen-sub                        -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/inbounds/{uid}/sub-toggle                       -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/inbounds/{uid}/adjust-traffic                   -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  PATCH  /api/inbounds/{uid}                                  -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /sub/{uid}                                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/plans                                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/settings                                        -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  POST   /api/servers                                         -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /                                                    -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /login                                               -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /dashboard                                           -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /setup                                               -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti
+  GET    /health                                              -> 0 ConnectError('[WinError 10061] No connection could be made because the target machine acti

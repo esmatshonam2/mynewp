@@ -1,0 +1,1296 @@
+{
+  "errors": [
+    {
+      "kind": "jsdomError",
+      "msg": "Not implemented: navigation to another Document"
+    },
+    {
+      "kind": "jsdomError",
+      "msg": "Not implemented: navigation to another Document"
+    }
+  ],
+  "netFails": [],
+  "netLog": [
+    {
+      "url": "/api/me",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=1",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/status",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/status",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=1",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/overview",
+      "status": 200
+    },
+    {
+      "url": "/stats",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/api/live",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/api/server-groups",
+      "status": 200
+    },
+    {
+      "url": "/api/servers/best",
+      "status": 200
+    },
+    {
+      "url": "/api/assignments",
+      "status": 200
+    },
+    {
+      "url": "/api/servers/monitoring",
+      "status": 200
+    },
+    {
+      "url": "/api/servers/top?sort_by=health",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/stats",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/api/servers/best",
+      "status": 200
+    },
+    {
+      "url": "/api/alerts?status=active",
+      "status": 200
+    },
+    {
+      "url": "/api/alerts?status=resolved",
+      "status": 200
+    },
+    {
+      "url": "/api/me",
+      "status": 200
+    },
+    {
+      "url": "/api/server-events?limit=200",
+      "status": 200
+    },
+    {
+      "url": "/api/live",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=100",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/topups",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/users",
+      "status": 200
+    },
+    {
+      "url": "/api/ai/chat",
+      "status": 200
+    },
+    {
+      "url": "/api/plugins",
+      "status": 200
+    },
+    {
+      "url": "/api/plugins/widgets",
+      "status": 200
+    },
+    {
+      "url": "/stats",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/status",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/config",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/status",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/tokens",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=1",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=1",
+      "status": 200
+    },
+    {
+      "url": "/api/backups",
+      "status": 200
+    },
+    {
+      "url": "/api/audit",
+      "status": 200
+    },
+    {
+      "url": "/api/me",
+      "status": 200
+    },
+    {
+      "url": "/api/security/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/admins",
+      "status": 200
+    },
+    {
+      "url": "/api/roles",
+      "status": 200
+    },
+    {
+      "url": "/stats",
+      "status": 200
+    },
+    {
+      "url": "/api/live",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/ota/check",
+      "status": 200
+    },
+    {
+      "url": "/api/ota/update",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds/reset-all-usage",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds/reset-all-usage",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds/45575a5ac9126b65/links",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds/45575a5ac9126b65/toggle",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds/45575a5ac9126b65/clone",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds/45575a5ac9126b65/reset-usage",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds/45575a5ac9126b65/regenerate",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/stats",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds/45575a5ac9126b65",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/inbounds",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans/plan_bronze",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans/plan_bronze",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans/plan_silver",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans/plan_silver",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans/plan_gold",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans/plan_gold",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans/plan_d5749ae894831d39",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/plans/plan_d5749ae894831d39",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/api/server-groups",
+      "status": 200
+    },
+    {
+      "url": "/api/servers/best",
+      "status": 200
+    },
+    {
+      "url": "/api/assignments",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/api/plans",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=1",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=1",
+      "status": 200
+    },
+    {
+      "url": "/api/servers/monitoring",
+      "status": 200
+    },
+    {
+      "url": "/api/servers/top?sort_by=health",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/stats",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/api/servers/best",
+      "status": 200
+    },
+    {
+      "url": "/api/servers",
+      "status": 200
+    },
+    {
+      "url": "/api/alerts?status=active",
+      "status": 200
+    },
+    {
+      "url": "/api/alerts?status=resolved",
+      "status": 200
+    },
+    {
+      "url": "/api/me",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/server-events?limit=200",
+      "status": 200
+    },
+    {
+      "url": "/api/analytics?range=today",
+      "status": 200
+    },
+    {
+      "url": "/api/analytics?range=today",
+      "status": 200
+    },
+    {
+      "url": "/api/analytics?range=yesterday",
+      "status": 200
+    },
+    {
+      "url": "/api/analytics?range=yesterday",
+      "status": 200
+    },
+    {
+      "url": "/api/analytics?range=24h",
+      "status": 200
+    },
+    {
+      "url": "/api/analytics?range=24h",
+      "status": 200
+    },
+    {
+      "url": "/api/analytics?range=7d",
+      "status": 200
+    },
+    {
+      "url": "/api/analytics?range=7d",
+      "status": 200
+    },
+    {
+      "url": "/api/analytics?range=30d",
+      "status": 200
+    },
+    {
+      "url": "/api/analytics?range=30d",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/live",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=100",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications/read",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications/read",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=100",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=100",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/topups",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/users",
+      "status": 200
+    },
+    {
+      "url": "/api/ai/chat",
+      "status": 200
+    },
+    {
+      "url": "/api/ai/chat",
+      "status": 200
+    },
+    {
+      "url": "/api/ai/chat",
+      "status": 200
+    },
+    {
+      "url": "/api/plugins",
+      "status": 200
+    },
+    {
+      "url": "/api/plugins/widgets",
+      "status": 200
+    },
+    {
+      "url": "/stats",
+      "status": 200
+    },
+    {
+      "url": "/api/plugins/system_extra/toggle",
+      "status": 200
+    },
+    {
+      "url": "/api/plugins",
+      "status": 200
+    },
+    {
+      "url": "/api/plugins/widgets",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/status",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/config",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/restart",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/restart",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/status",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/status",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/config",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/config",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/start",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/start",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/status",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/status",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/config",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/config",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/stop",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/stop",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/status",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/status",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/config",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/config",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/restart",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/restart",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/status",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/status",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/config",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/config",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/validate",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/validate",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/status",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/save",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/save",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/status",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/status",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/test",
+      "status": 400
+    },
+    {
+      "url": "/api/telegram/test",
+      "status": 400
+    },
+    {
+      "url": "/api/shop/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/status",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/status",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/tokens",
+      "status": 200
+    },
+    {
+      "url": "/api/tokens",
+      "status": 200
+    },
+    {
+      "url": "/api/tokens",
+      "status": 200
+    },
+    {
+      "url": "/api/tokens",
+      "status": 200
+    },
+    {
+      "url": "/api/tokens",
+      "status": 200
+    },
+    {
+      "url": "/api/backups",
+      "status": 200
+    },
+    {
+      "url": "/api/backup/export",
+      "status": 200
+    },
+    {
+      "url": "/api/backup/export",
+      "status": 200
+    },
+    {
+      "url": "/api/backups",
+      "status": 200
+    },
+    {
+      "url": "/api/backups",
+      "status": 200
+    },
+    {
+      "url": "/api/backups",
+      "status": 200
+    },
+    {
+      "url": "/api/backups",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/audit",
+      "status": 200
+    },
+    {
+      "url": "/api/audit",
+      "status": 200
+    },
+    {
+      "url": "/api/me",
+      "status": 200
+    },
+    {
+      "url": "/api/security/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/admins",
+      "status": 200
+    },
+    {
+      "url": "/api/roles",
+      "status": 200
+    },
+    {
+      "url": "/stats",
+      "status": 200
+    },
+    {
+      "url": "/api/2fa/setup",
+      "status": 401
+    },
+    {
+      "url": "/api/2fa/setup",
+      "status": 401
+    },
+    {
+      "url": "/api/2fa/disable",
+      "status": 401
+    },
+    {
+      "url": "/api/2fa/disable",
+      "status": 401
+    },
+    {
+      "url": "/api/2fa/verify",
+      "status": 404
+    },
+    {
+      "url": "/api/2fa/verify",
+      "status": 404
+    },
+    {
+      "url": "/api/admins",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=1",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/system",
+      "status": 200
+    },
+    {
+      "url": "/api/online",
+      "status": 200
+    },
+    {
+      "url": "/api/roles",
+      "status": 200
+    },
+    {
+      "url": "/api/notifications?limit=1",
+      "status": 200
+    },
+    {
+      "url": "/api/roles/admin",
+      "status": 200
+    },
+    {
+      "url": "/api/roles/support",
+      "status": 200
+    },
+    {
+      "url": "/api/roles/viewer",
+      "status": 200
+    },
+    {
+      "url": "/api/me",
+      "status": 200
+    },
+    {
+      "url": "/api/security/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/admins",
+      "status": 200
+    },
+    {
+      "url": "/api/roles",
+      "status": 200
+    },
+    {
+      "url": "/api/me",
+      "status": 200
+    },
+    {
+      "url": "/api/security/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/admins",
+      "status": 200
+    },
+    {
+      "url": "/api/roles",
+      "status": 200
+    },
+    {
+      "url": "/api/telegram/status",
+      "status": 200
+    },
+    {
+      "url": "/api/shop/overview",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/status",
+      "status": 200
+    },
+    {
+      "url": "/api/xray/config",
+      "status": 200
+    },
+    {
+      "url": "/api/backups",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    },
+    {
+      "url": "/api/diagnostics/run",
+      "status": 200
+    },
+    {
+      "url": "/api/diagnostics/run",
+      "status": 200
+    },
+    {
+      "url": "/api/settings",
+      "status": 200
+    }
+  ],
+  "viewReport": [
+    {
+      "view": "dashboard",
+      "shown": "view-dashboard",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "inbounds",
+      "shown": "view-inbounds",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "traffic",
+      "shown": "view-traffic",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "plans",
+      "shown": "view-plans",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "servers",
+      "shown": "view-servers",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "monitoring",
+      "shown": "view-monitoring",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "map",
+      "shown": "view-map",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "compare",
+      "shown": "view-compare",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "alerts",
+      "shown": "view-alerts",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "events",
+      "shown": "view-events",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "analytics",
+      "shown": "view-analytics",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "live",
+      "shown": "view-live",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "notifications",
+      "shown": "view-notifications",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "shop",
+      "shown": "view-shop",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "ai",
+      "shown": "view-ai",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "extensions",
+      "shown": "view-extensions",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "xray",
+      "shown": "view-xray",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "telegram",
+      "shown": "view-telegram",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "api",
+      "shown": "view-api",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "backup",
+      "shown": "view-backup",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "diagnostics",
+      "shown": "view-diagnostics",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "logs",
+      "shown": "view-logs",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "security",
+      "shown": "view-security",
+      "errors": 0,
+      "msgs": []
+    },
+    {
+      "view": "settings",
+      "shown": "view-settings",
+      "errors": 0,
+      "msgs": []
+    }
+  ],
+  "btnReport": [
+    {
+      "view": "backup",
+      "label": "exportBtn",
+      "err": "Not implemented: navigation to another Document"
+    }
+  ]
+}

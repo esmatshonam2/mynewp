@@ -1,0 +1,8 @@
+{
+  "id": "system_extra",
+  "name": "System Extra",
+  "version": "1.0.0",
+  "author": "ALOO PANEL",
+  "description": "Extra host cards (boot time, processes, load) for the Extensions view.",
+  "enabled": false
+}
