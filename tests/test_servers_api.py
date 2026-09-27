@@ -203,6 +203,8 @@ class TestMonitoring:
                 data = r.json()
                 assert "total_servers" in data
                 assert "online" in data
+                assert data["total_servers"] >= 1
+                assert data["online"] >= 1
         run_async(_t())
 
     def test_top_servers(self):
@@ -268,7 +270,8 @@ class TestSettingsAPI:
                 s = r.json()["settings"]
                 assert "server_offline_after" in s
                 assert "alert_cpu" in s
-                assert "agent_auth_secret" in s
+                assert "agent_configured" in s
+                assert "agent_auth_secret" not in s
                 assert "heartbeat_threshold" in s
         run_async(_t())
 
@@ -283,7 +286,8 @@ class TestSettingsAPI:
                 assert r.status_code == 200
                 r2 = await c.get("/api/me")
                 s = r2.json()["settings"]
-                assert s["agent_auth_secret"] == "mysecret123"
+                assert s["agent_configured"] is True
+                assert "agent_auth_secret" not in s
                 assert s["heartbeat_threshold"] == 120
         run_async(_t())
 

@@ -21,6 +21,33 @@ async def _setup(client):
     return await client.post("/api/setup", json={"username": "admin", "password": "Admin123!"})
 
 
+class TestSecurityRegression:
+    def test_me_redacts_secrets(self):
+        async def _t():
+            async with _client() as c:
+                await _setup(c)
+                from storage import store
+                await store.mutate(lambda db: db["settings"].update({
+                    "telegram_bot_token": "secret-token-value",
+                    "agent_auth_secret": "agent-secret-value",
+                }))
+                data = (await c.get("/api/me")).json()
+                assert "telegram_bot_token" not in data["settings"]
+                assert "agent_auth_secret" not in data["settings"]
+        run_async(_t())
+
+    def test_ota_requires_dedicated_permission(self):
+        async def _t():
+            async with _client() as c:
+                await _setup(c)
+                from storage import store
+                await store.mutate(lambda db: db["settings"].update({"role_overrides": {
+                    "admin": ["analytics.read"]
+                }}))
+                assert (await c.get("/api/ota/check")).status_code == 403
+        run_async(_t())
+
+
 class TestAuthRegression:
     def test_setup_creates_owner(self):
         async def _t():
@@ -314,4 +341,23 @@ class TestProfessionalEnhancements:
                 await _setup(c)
                 r = await c.post("/api/backup/import", json={"db": {"inbounds": [{"uid": "x"}, {"uid": "x"}]}})
                 assert r.status_code == 400
+        run_async(_t())
+
+    def test_telegram_commands_produce_operational_reports(self, monkeypatch):
+        async def _t():
+            from telegram_bot import _handle_command
+            from storage import store
+            await _setup(_client())
+            sent = []
+            async def fake_send(token, chat, text, *args, **kwargs):
+                sent.append(text)
+                return True
+            monkeypatch.setattr("telegram_bot.send_message", fake_send)
+            await _handle_command(store, "token", "1", "/health")
+            await _handle_command(store, "token", "1", "/traffic")
+            await _handle_command(store, "token", "1", "/alerts")
+            assert len(sent) == 3
+            assert "سلامت" in sent[0]
+            assert "ترافیک" in sent[1]
+            assert "هشدار" in sent[2]
         run_async(_t())

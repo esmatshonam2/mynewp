@@ -171,6 +171,19 @@ def resolve_creds(settings: dict):
             str(s.get("telegram_chat_id") or "").strip(), "db")
 
 
+def _main_xray_status() -> str:
+    try:
+        import xray_manager as _xm
+        proc = getattr(_xm, "xray_process", None)
+        if proc is not None and proc.poll() is None:
+            return "آنلاین"
+        if not os.path.exists(getattr(_xm, "XRAY_BIN", "/usr/local/bin/xray")):
+            return "Mock"
+        return "آفلاین"
+    except Exception:
+        return "نامشخص"
+
+
 async def _handle_command(store, token: str, chat_id: str, text: str, build_links_cb=None):
     """Command router over REAL panel data (users, traffic, subscriptions)."""
     import time as _t
@@ -205,11 +218,36 @@ async def _handle_command(store, token: str, chat_id: str, text: str, build_link
 
     if cmd in ("/start", "/help"):
         await reply("👑 <b>ALOO PANEL Bot</b>\n\n"
-                    "/stats — وضعیت سرور\n/users — لیست کاربران\n"
+                    "/stats — وضعیت سرور\n/health — سلامت سرویس‌ها\n"
+                    "/traffic — ترافیک کل\n/alerts — هشدارهای فعال\n"
+                    "/users — لیست کاربران\n"
                     "/user &lt;name&gt; — مصرف، باقی‌مانده و انقضا\n"
                     "/sub &lt;name&gt; — لینک سابسکریپشن + QR\n"
                     "/create &lt;name&gt; [quotaGB] [days] — ساخت کاربر\n"
                     "/reset &lt;name&gt; — ریست مصرف\n/delete &lt;name&gt; — حذف")
+        return
+    if cmd == "/health":
+        xray = _main_xray_status()
+        settings = db.get("settings") or {}
+        tg = "فعال" if settings.get("telegram_enabled") else "خاموش"
+        await reply(f"🩺 <b>سلامت پنل</b>\n⚡ Xray: {esc(xray)}\n🤖 Telegram: {tg}\n👥 کاربران: {len(db.get('inbounds', []))}")
+        return
+    if cmd == "/traffic":
+        up = db.get("stats", {}).get("total_up", 0)
+        down = db.get("stats", {}).get("total_down", 0)
+        await reply(f"📈 <b>ترافیک کل</b>\n⬆️ آپلود: {fmt_bytes(up)}\n⬇️ دانلود: {fmt_bytes(down)}\n📦 مجموع: {fmt_bytes(up + down)}")
+        return
+    if cmd == "/alerts":
+        try:
+            from core import users as _users
+            buckets = _users.summarize(db.get("inbounds", []), int((settings.get("expiry_warn_days") or 3)))
+        except Exception:
+            buckets = {}
+        lines = []
+        for key, label in (("expired", "منقضی"), ("quota_reached", "سقف حجم"), ("near_expiry", "نزدیک انقضا"), ("disabled", "غیرفعال")):
+            if buckets.get(key):
+                lines.append(f"• {label}: {buckets[key]}")
+        await reply("🚨 <b>هشدارهای کاربران</b>\n" + ("\n".join(lines) if lines else "موردی وجود ندارد ✅"))
         return
     if cmd == "/stats":
         ups = db["stats"].get("total_up", 0) + db["stats"].get("total_down", 0)
@@ -331,18 +369,25 @@ async def poll_loop(store, get_token_chat, interval: float = 2.5):
     """Long-poll getUpdates loop. get_token_chat() -> (token, admin_chat, enabled)."""
     import time as _t
     offset = 0
-    # persist offset in memory only
+    # Start from the current queue after a process restart. This prevents
+    # replaying old destructive commands such as /delete or /reset.
+    initialized = False
     while True:
         try:
             token, admin_chat, enabled = get_token_chat()
             if not enabled or not token:
                 await asyncio.sleep(10)
                 continue
+            # Without an explicit admin chat, never route arbitrary Telegram
+            # users into privileged panel commands. They may use shop mode only.
+            admin_chat = str(admin_chat or "").strip()
             async with httpx.AsyncClient(timeout=30) as c:
                 try:
-                    r = await c.post(_api_url(token, "getUpdates"),
-                                     json={"offset": offset, "timeout": 20,
-                                           "allowed_updates": ["message", "callback_query"]})
+                    payload = {"offset": offset, "timeout": 20,
+                               "allowed_updates": ["message", "callback_query"]}
+                    if not initialized:
+                        payload["offset"] = -1
+                    r = await c.post(_api_url(token, "getUpdates"), json=payload)
                     data = r.json()
                 except Exception as e:
                     poll_state.update({"last_ts": _t.time(), "ok": False, "error": f"net: {e}"[:200]})
@@ -355,6 +400,13 @@ async def poll_loop(store, get_token_chat, interval: float = 2.5):
                 await asyncio.sleep(15)
                 continue
             poll_state.update({"last_ts": _t.time(), "ok": True, "error": ""})
+            if not initialized:
+                # Discard the single newest queued update returned by offset=-1;
+                # never replay an old destructive command after restart.
+                for upd in data.get("result", []):
+                    offset = max(offset, int(upd.get("update_id", 0)) + 1)
+                initialized = True
+                continue
             for upd in data.get("result", []):
                 offset = max(offset, int(upd.get("update_id", 0)) + 1)
                 # ---- inline button taps ----
@@ -369,7 +421,7 @@ async def poll_loop(store, get_token_chat, interval: float = 2.5):
                 chat = str((msg.get("chat") or {}).get("id", ""))
                 text = msg.get("text") or ""
                 tg_user = msg.get("from") or {}
-                if admin_chat and chat != str(admin_chat):
+                if not admin_chat or chat != str(admin_chat):
                     # ---- customer (shop) mode ----
                     try:
                         db0 = await store.get()

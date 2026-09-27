@@ -515,6 +515,34 @@ def inbound_status(ib) -> dict:
 
 
 # ------------------------------------------------------------------ background tasks
+async def _flush_traffic():
+    """Persist any queued traffic before shutdown.
+
+    Traffic is normally committed by ``_periodic_flush``. The queue is kept
+    as a compatibility buffer for adapters that report deltas asynchronously;
+    draining it here makes shutdown deterministic instead of raising a hidden
+    NameError.
+    """
+    pending = dict(runtime.get("pending_traffic") or {})
+    if not pending:
+        return
+
+    def _apply(db):
+        for uid, delta in pending.items():
+            ib = inbound_by_uid(db, uid)
+            if not ib:
+                continue
+            up = max(0, int(delta.get("up", 0) or 0))
+            down = max(0, int(delta.get("down", 0) or 0))
+            ib["used_up"] = int(ib.get("used_up", 0) or 0) + up
+            ib["used_down"] = int(ib.get("used_down", 0) or 0) + down
+            db["stats"]["total_up"] = int(db["stats"].get("total_up", 0) or 0) + up
+            db["stats"]["total_down"] = int(db["stats"].get("total_down", 0) or 0) + down
+
+    await store.mutate(_apply)
+    runtime["pending_traffic"].clear()
+
+
 async def _periodic_flush():
     global last_seen
     while True:
@@ -645,12 +673,15 @@ async def _telegram_poll_loop():
         s = (db.get("settings") or {})
         token, chat, _src = telegram_bot.resolve_creds(s)
         return (token, chat, bool(s.get("telegram_enabled")))
-    try:
-        await telegram_bot.poll_loop(store, _creds)
-    except asyncio.CancelledError:
-        pass
-    except Exception:
-        await asyncio.sleep(5)
+    while True:
+        try:
+            await telegram_bot.poll_loop(store, _creds)
+        except asyncio.CancelledError:
+            raise
+        except Exception as exc:
+            # Keep polling recoverable after a transient Telegram/network error.
+            logging.getLogger("telegram_bot").warning("poll supervisor restart: %s", exc)
+            await asyncio.sleep(5)
 
 
 # ------------------------- Phase 3: multi-server federation -------------------------
@@ -1266,13 +1297,30 @@ async def api_me(request: Request):
     db = await store.get()
     role = await actor_role(request, db) if user else ""
     admin = find_admin(db, user) if user and not user.startswith("token:") else None
+    raw_settings = db.get("settings", {}) if user else {}
+    # Never expose credentials or agent secrets through the general session
+    # bootstrap endpoint. Only the settings needed to render the UI are sent.
+    safe_keys = {
+        "lang", "theme", "public_domain", "keep_alive", "default_fingerprint",
+        "default_alpn", "sni_override", "fragment_enabled", "fragment_packets",
+        "fragment_length", "fragment_interval", "sub_remark_prefix",
+        "auto_disable_exhausted", "quota_warn_percent", "expiry_warn_days",
+        "maintenance_enabled", "maintenance_message", "alert_cpu", "alert_mem",
+        "alert_disk", "alert_latency_ms", "alert_conns", "server_poll_interval",
+        "lb_strategy", "backup_enabled", "backup_hour", "backup_minute",
+        "backup_keep", "backup_send_telegram", "shop_enabled", "support_username",
+        "shop_test_gb", "shop_test_days", "referral_bonus", "role_overrides",
+        "heartbeat_threshold", "server_offline_after",
+    }
+    safe_settings = {k: raw_settings.get(k) for k in safe_keys if k in raw_settings}
+    safe_settings["agent_configured"] = bool(raw_settings.get("agent_auth_secret"))
     return {
         "logged_in": bool(user),
         "username": user,
         "role": role or ("owner" if user and user.startswith("token:") else ""),
         "totp_enabled": bool(admin and admin.get("totp_secret")),
-        "maintenance": bool((db.get("settings") or {}).get("maintenance_enabled")),
-        "settings": db.get("settings", {}),
+        "maintenance": bool(raw_settings.get("maintenance_enabled")),
+        "settings": safe_settings,
         "app_version": APP_VERSION,
         "app_name": APP_NAME,
         "app_edition": APP_EDITION,
@@ -3707,19 +3755,24 @@ async def api_servers_monitoring(user: str = Depends(require_perm("servers.read"
     """Global multi-server monitoring overview with aggregated metrics."""
     db = await store.get()
     servers = db.get("servers", [])
-    online = [s for s in servers if s.get("online") is True]
-    offline = [s for s in servers if s.get("online") is False]
-    maintenance = [s for s in servers if s.get("maintenance")]
-    healths = [s.get("health") for s in servers if s.get("health") is not None]
-    loads = [s.get("load") for s in servers if s.get("load") is not None]
-    latencies = [s.get("latency_ms") for s in servers if s.get("latency_ms") is not None]
-    total_users = sum(int((s.get("metrics") or {}).get("users") or 0) for s in servers)
-    total_conns = sum(int((s.get("metrics") or {}).get("active_connections") or 0) for s in servers)
-    total_up = sum(int((s.get("metrics") or {}).get("total_up") or 0) for s in servers)
-    total_down = sum(int((s.get("metrics") or {}).get("total_down") or 0) for s in servers)
+    local = {"online": True, "maintenance": False, "health": 100, "load": None,
+             "latency_ms": 0, "metrics": {"users": len(db.get("inbounds", [])),
+             "active_connections": 0, "total_up": db.get("stats", {}).get("total_up", 0),
+             "total_down": db.get("stats", {}).get("total_down", 0)}}
+    all_servers = [local] + servers
+    online = [s for s in all_servers if s.get("online") is True]
+    offline = [s for s in all_servers if s.get("online") is False]
+    maintenance = [s for s in all_servers if s.get("maintenance")]
+    healths = [s.get("health") for s in all_servers if s.get("health") is not None]
+    loads = [s.get("load") for s in all_servers if s.get("load") is not None]
+    latencies = [s.get("latency_ms") for s in all_servers if s.get("latency_ms") is not None]
+    total_users = sum(int((s.get("metrics") or {}).get("users") or 0) for s in all_servers)
+    total_conns = sum(int((s.get("metrics") or {}).get("active_connections") or 0) for s in all_servers)
+    total_up = sum(int((s.get("metrics") or {}).get("total_up") or 0) for s in all_servers)
+    total_down = sum(int((s.get("metrics") or {}).get("total_down") or 0) for s in all_servers)
     active_alerts = sum(1 for a in db.get("server_alerts", []) if a.get("status") == "active")
     return {
-        "total_servers": len(servers),
+        "total_servers": len(all_servers),
         "online": len(online),
         "offline": len(offline),
         "maintenance": len(maintenance),
@@ -4466,7 +4519,7 @@ async def _resolve_latest_release(repo: str, current: str, client: httpx.AsyncCl
 
 
 @app.get("/api/ota/check")
-async def api_ota_check(user: str = Depends(require_auth)):
+async def api_ota_check(user: str = Depends(require_perm("ota.manage"))):
     current = APP_VERSION
     latest = current
     url = f"https://github.com/{OTA_REPO}/releases"
@@ -4528,7 +4581,7 @@ def _apply_staged_update(staged_dir: str, live_dir: str) -> list:
 
 
 @app.post("/api/ota/update")
-async def api_ota_update(request: Request, user: str = Depends(require_auth)):
+async def api_ota_update(request: Request, user: str = Depends(require_perm("ota.manage"))):
     if UPDATE_LOCK.locked():
         raise HTTPException(409, "update-already-in-progress")
 

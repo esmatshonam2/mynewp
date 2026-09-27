@@ -23,7 +23,7 @@ PERMISSIONS = (
     "users.read", "users.create", "users.edit", "users.delete",
     "servers.read", "servers.manage",
     "settings.manage", "telegram.manage", "security.manage",
-    "analytics.read", "backup.manage", "admins.manage",
+    "analytics.read", "backup.manage", "admins.manage", "ota.manage",
 )
 
 ROLE_PERMS = {

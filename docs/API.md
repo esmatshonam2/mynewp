@@ -55,7 +55,8 @@ Error shape: `{"detail": "<code>"}`.
 - `GET /api/roles` · `PATCH /api/roles/{role} {permissions}` (admins.manage; `owner` locked to `*`)
 - `GET /api/diagnostics/run` (security.manage)
 - `GET /api/plugins[/widgets]` · `POST /api/plugins/{id}/toggle` (settings.manage)
-- `POST /api/settings` (settings.manage) · `POST /api/ota/{check,update}` (settings.manage)
+- `POST /api/settings` (settings.manage) · `GET/POST /api/ota/{check,update}` (ota.manage)
+- `/api/me` intentionally redacts Telegram token and agent secret; it returns only `agent_configured: true|false`.
 
 ## Server groups (Phase 3)
 - `GET /api/server-groups` (read) — list all groups
